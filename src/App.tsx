@@ -4,6 +4,7 @@ import { ProjectCard } from "./components/ProjectCard";
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
+import { PasswordProtection } from "./components/PasswordProtection";
 import { useState, useEffect } from "react";
 
 const projects = [
