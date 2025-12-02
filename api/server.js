@@ -3,8 +3,8 @@ import path from 'path';
 
 export default function handler(req, res) {
   const auth = req.headers.authorization || '';
-  const username = 'admin';
-  const password = 'mypassword';
+  const username = process.env.AUTH_USER;
+  const password = process.env.AUTH_PASS;
   const credentials = Buffer.from(`${username}:${password}`).toString('base64');
 
   // Check Basic Auth header
