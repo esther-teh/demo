@@ -10,8 +10,8 @@ export default function handler(req, res) {
   // Check Basic Auth header
   if (auth !== `Basic ${credentials}`) {
     res.statusCode = 401;
-    res.setHeader('WWW-Authenticate', 'Basic realm="Restricted"');
-    res.end('Unauthorized');
+    res.setHeader('WWW-Authenticate', 'Basic realm="Please enter password again"');
+    res.end('Logged out');
     return;
   }
 
