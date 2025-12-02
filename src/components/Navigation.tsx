@@ -20,7 +20,7 @@ export function Navigation() {
             onClick={() => scrollToSection("home")}
             className="text-gray-900 hover:text-gray-600 transition-colors"
           >
-            Sarah Chen
+            Esther Teh
           </button>
 
           {/* Desktop Menu */}

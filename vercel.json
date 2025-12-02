@@ -6,14 +6,14 @@
       "config": { "distDir": "dist" }
     },
     {
-      "src": "api/_middleware.js",
+      "src": "api/server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/api/_middleware.js"
+      "dest": "/api/server.js"
     }
   ]
 }

@@ -9,7 +9,7 @@ export function About() {
             <h2 className="mb-6 text-gray-900">About Me</h2>
             <div className="space-y-4 text-gray-600">
               <p>
-                I'm a UX designer based in San Francisco, specializing in
+                I'm a UX designer based in Malaysia,KL, specializing in
                 creating meaningful digital experiences. My journey in design
                 started with a curiosity about how people interact with
                 technology and has evolved into a passion for creating products

@@ -4,6 +4,8 @@ import { ProjectCard } from "./components/ProjectCard";
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
+import { PasswordProtection } from "./components/PasswordProtection";
+import { useState, useEffect } from "react";
 
 const projects = [
   {
@@ -36,6 +38,32 @@ const projects = [
 ];
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Check if user is already authenticated
+    const authenticated = localStorage.getItem("portfolio_authenticated");
+    if (authenticated === "true") {
+      setIsAuthenticated(true);
+    }
+    setIsLoading(false);
+  }, []);
+
+  const handleAuthenticate = () => {
+    setIsAuthenticated(true);
+  };
+
+  // Show loading state briefly
+  if (isLoading) {
+    return null;
+  }
+
+  // Show password protection if not authenticated
+  if (!isAuthenticated) {
+    return <PasswordProtection onAuthenticate={handleAuthenticate} />;
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -66,7 +94,7 @@ export default function App() {
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-gray-200">
         <div className="max-w-6xl mx-auto text-center text-gray-500">
-          <p>© 2025 Sarah Chen. All rights reserved.</p>
+          <p>© 2025 Esther Teh. All rights reserved.</p>
         </div>
       </footer>
     </div>

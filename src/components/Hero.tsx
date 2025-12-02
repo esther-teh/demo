@@ -20,7 +20,7 @@ export function Hero() {
           Crafting intuitive digital experiences that users love
         </h1>
         <p className="mb-12 text-gray-600 max-w-2xl mx-auto">
-          I'm Sarah Chen, a UX designer passionate about solving complex problems
+          I'm Esther Teh, a UX designer passionate about solving complex problems
           through user-centered design. With 5+ years of experience, I help
           businesses create products that are both beautiful and functional.
         </p>
