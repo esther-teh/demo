@@ -1,7 +1,7 @@
 export default function handler(req, res) {
   const auth = req.headers.authorization;
 
-  // Replace with your username:password
+  // Change these to your own username/password
   const username = 'admin';
   const password = 'mypassword';
 
@@ -14,6 +14,7 @@ export default function handler(req, res) {
     return;
   }
 
+  // If authorized, serve the static site
   res.statusCode = 200;
-  res.end('Authorized');
+  res.end('Authorized'); // This will allow Vercel to continue serving your static files
 }
