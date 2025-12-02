@@ -19,16 +19,19 @@ export default function handler(req, res) {
   let filePath = req.url === '/' ? '/index.html' : req.url;
   const fullPath = path.join(process.cwd(), 'dist', filePath);
 
-  fs.readFile(fullPath, (err, data) => {
+  fs.readFile(path.join(process.cwd(), 'dist', 'index.html'), (err2, fallback) => {
     if (err) {
       res.statusCode = 404;
       res.end('Not Found');
-      return;
-    }
-    res.setHeader('Content-Type', getContentType(filePath));
-    res.end(data);
-  });
-}
+       return;
+      }
+      res.setHeader('Content-Type', 'text/html');
+      res.end(fallback);
+    });
+    return;
+  }
+  res.setHeader('Content-Type', getContentType(filePath));
+  res.end(data);
 
 // Basic MIME type detection
 function getContentType(filePath) {
