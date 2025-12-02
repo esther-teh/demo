@@ -58,6 +58,10 @@ export default function App() {
     return null;
   }
 
+  // Show password protection if not authenticated
+  if (!isAuthenticated) {
+    return <onAuthenticate={handleAuthenticate} />;
+  }
 
   return (
     <div className="min-h-screen bg-white">
