@@ -60,7 +60,7 @@ export default function App() {
 
   // Show password protection if not authenticated
   if (!isAuthenticated) {
-    return <onAuthenticate={handleAuthenticate} />;
+    return <Hero onAuthenticate={handleAuthenticate} />;
   }
 
   return (
